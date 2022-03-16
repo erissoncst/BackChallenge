@@ -10,7 +10,7 @@ namespace Api.Controllers
     public class CheckInController : ApiControllerBase
     {
         [HttpPost]
-        [Authorize(Roles = "CUSTOMER")]
+        [Authorize(Roles = "CUSTOMER,EMPLOYEE")]
         public async Task<CheckInResponse> Save(SaveCheckInsCommand command)
         {
             return await Mediator.Send(command);
