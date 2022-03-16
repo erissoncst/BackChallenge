@@ -1,13 +1,15 @@
 using Application.CheckIns.Command.SaveCheckIn;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
-    public class CustomerController : ApiControllerBase
+    public class EmployeeController : ApiControllerBase
     {
         [HttpPost]
-        public async Task<Customer> Save(SaveCustomerCommand command)
+        [Authorize(Roles = "EMPLOYEE")]
+        public async Task<Employee> Save(SaveEmployeeCommand command)
         {
             return await Mediator.Send(command);
         }

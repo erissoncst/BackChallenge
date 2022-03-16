@@ -12,7 +12,7 @@ namespace Application.CheckIns.Command.SaveCheckIn
         public String Password { get; set; }
         public String FullName { get; set; }
         public String IndividualRegistration { get; set; }
-        public DateOnly BirthDate { get; set; }
+        public String BirthDate { get; set; }
         public String ZipCode { get; set; }
         public String PublicPlace { get; set; }
         public String Number { get; set; }
@@ -32,11 +32,12 @@ namespace Application.CheckIns.Command.SaveCheckIn
 
         public async Task<Customer> Handle(SaveCustomerCommand request, CancellationToken cancellationToken)
         {
-            var user = User.Of(request.IndividualRegistration, request.Password);
+            var user = User.Of(request.IndividualRegistration, User.EncodingPassword(request.Password));
             _dataContext.Users.Add(user);
+            
             var customer = Customer.Of(request.FullName, 
                 request.IndividualRegistration,
-                request.BirthDate,
+                DateOnly.Parse(request.BirthDate),
                 request.ZipCode,
                 request.PublicPlace,
                 request.Number,

@@ -227,9 +227,21 @@ namespace Infrastructure.Persistence.Migrations
                 column: "checkin_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_customers_individual_registration",
+                table: "customers",
+                column: "individual_registration",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_customers_user_id",
                 table: "customers",
                 column: "user_id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_employees_registration",
+                table: "employees",
+                column: "registration",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -247,6 +259,12 @@ namespace Infrastructure.Persistence.Migrations
                 name: "IX_models_category_id",
                 table: "models",
                 column: "category_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_users_login",
+                table: "users",
+                column: "login",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220316024031_Init")]
+    [Migration("20220316172314_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -228,6 +228,9 @@ namespace Infrastructure.Persistence.Migrations
 
                     b.HasKey("CustomerId");
 
+                    b.HasIndex("IndividualRegistration")
+                        .IsUnique();
+
                     b.HasIndex("UserId")
                         .IsUnique();
 
@@ -256,6 +259,9 @@ namespace Infrastructure.Persistence.Migrations
                         .HasColumnName("user_id");
 
                     b.HasKey("EmployeeId");
+
+                    b.HasIndex("Registration")
+                        .IsUnique();
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -323,6 +329,9 @@ namespace Infrastructure.Persistence.Migrations
                         .HasColumnName("password");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("users");
                 });
@@ -426,9 +435,11 @@ namespace Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
-                    b.Navigation("Customer");
+                    b.Navigation("Customer")
+                        .IsRequired();
 
-                    b.Navigation("Employee");
+                    b.Navigation("Employee")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

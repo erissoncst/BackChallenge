@@ -22,5 +22,14 @@ namespace Domain.Entities
 
         public User User { get; set; }
 
+        public static Employee Of(String fullName, String registration, User user)
+        {
+            return new Employee
+            {
+                FullName = fullName,
+                Registration = registration,
+                User = user
+            };
+        }
     }
 }

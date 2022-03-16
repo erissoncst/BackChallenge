@@ -116,13 +116,11 @@ namespace Infrastructure.Persistence
                 ctx.Cars.Add(Car.Of(pajero, 2022, "PRATA", "MNQ2G59"));
                 ctx.Cars.Add(Car.Of(pajero, 2022, "BRANCO", "AZQ7T53"));
 
-                var user = User.Of("12345678910", "123");
+                var user = User.Of("admin", User.EncodingPassword("admin"));
                 ctx.Users.Add(user);
 
-                var customer = Customer.Of("Erisson Costa", "12345678910", new DateOnly(1995, 1, 1), "59293-180", "Rua José Batista Da Silva", "127", null, "Natal", "RN", user);
-                ctx.Customers.Add(customer);
-
-                ctx.CheckIns.Add(CheckIn.Of(kwidCar, customer, 1, RentCarType.ACTIVE, DateTime.Now, DateTime.Now));
+                var emp = Employee.Of("Erisson Costa", "12345678910", user);
+                ctx.Employees.Add(emp);
             }
             await ctx.SaveChangesAsync();
         }

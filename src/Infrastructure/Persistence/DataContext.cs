@@ -25,7 +25,15 @@ namespace Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Login)
+                .IsUnique();
+            modelBuilder.Entity<Employee>()
+                .HasIndex(c => c.Registration)
+                .IsUnique();
+            modelBuilder.Entity<Customer>()
+                .HasIndex(c => c.IndividualRegistration)
+                .IsUnique();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
