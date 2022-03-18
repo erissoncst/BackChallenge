@@ -28,7 +28,7 @@ namespace Application.Categories.Command.SimulationCategoriesCommand
         public async Task<SimulationResponse> Handle(SimulationCategoriesCommand request, CancellationToken cancellationToken)
         {
             var simulation = request.Simulation;
-            var category = _context.Categories.Where(cat => cat.CategoryId == request.CategoryId).First();
+            var category = _context.Categories.Where(cat => cat.CategoryId == request.CategoryId).FirstOrDefault();
    
             return SimulationResponse.Of(simulation, category);
         }

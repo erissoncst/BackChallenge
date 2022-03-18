@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{F0496D3C-C723-4086-B960-C1AD57CE4E61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{49DF5F61-4978-4C06-8B9D-C26FE241889C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{49DF5F61-4978-4C06-8B9D-C26FE241889C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.IntegrationTests", "tests\Application.IntegrationTests\Application.IntegrationTests.csproj", "{2C8F9A11-842B-4977-8957-C7980C50AB14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{49DF5F61-4978-4C06-8B9D-C26FE241889C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49DF5F61-4978-4C06-8B9D-C26FE241889C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49DF5F61-4978-4C06-8B9D-C26FE241889C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8F9A11-842B-4977-8957-C7980C50AB14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8F9A11-842B-4977-8957-C7980C50AB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8F9A11-842B-4977-8957-C7980C50AB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8F9A11-842B-4977-8957-C7980C50AB14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{0038CCA9-93F9-44E6-84F0-FC0C247E092A} = {F75DCC61-1B13-4D5B-869D-DF34150F7158}
 		{F0496D3C-C723-4086-B960-C1AD57CE4E61} = {F75DCC61-1B13-4D5B-869D-DF34150F7158}
 		{49DF5F61-4978-4C06-8B9D-C26FE241889C} = {F75DCC61-1B13-4D5B-869D-DF34150F7158}
+		{2C8F9A11-842B-4977-8957-C7980C50AB14} = {33E4AF05-E62E-4A5B-A248-DFEC8013245B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {88EA7DB9-B788-4B68-8DAA-379EFA49DCE2}
