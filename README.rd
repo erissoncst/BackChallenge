@@ -1,0 +1,2 @@
+dotnet ef migrations add "Init" --project src\Infrastructure --startup-project src\Api --output-dir Persistence\Migrations
+dotnet ef database update --project src\Infrastructure --startup-project src\Api
